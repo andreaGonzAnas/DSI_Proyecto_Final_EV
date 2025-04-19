@@ -1,21 +1,31 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="Card" src="project://database/Assets/resources/Card.uxml?fileID=9197481963319205126&amp;guid=634d16974d37ea84992c6e93e9e76d26&amp;type=3#Card" />
     <ui:VisualElement name="All" style="flex-grow: 1; flex-direction: row; background-color: rgb(115, 160, 171);">
-        <ui:VisualElement name="Menu" style="flex-grow: 1; width: 20%; height: 100%; background-color: rgb(255, 255, 255);" />
+        <ui:VisualElement name="Menu" style="flex-grow: 1; width: 20%; height: 100%; background-color: rgb(0, 0, 0);" />
         <ui:VisualElement name="Chart" style="flex-grow: 1; width: 80%; height: 100%; background-image: url(&quot;project://database/Assets/Images/Fondo.png?fileID=21300000&amp;guid=7d0201fe8165c434d846d74ac16d91c7&amp;type=3#Fondo&quot;); background-color: rgb(0, 0, 0); padding-top: 30px; padding-right: 30px; padding-bottom: 50px; padding-left: 30px;">
-            <ui:VisualElement name="1" style="flex-grow: 1; width: 100%; height: 25%;" />
-            <ui:VisualElement name="2" style="flex-grow: 1; width: 100%; height: 25%; align-self: stretch; flex-direction: row; align-items: auto; justify-content: space-around;">
-                <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 12.5%; height: 100%; background-color: rgb(0, 0, 0); flex-shrink: 0; flex-basis: auto;" />
-                <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 12.5%; height: 100%; background-color: rgb(0, 0, 0); flex-shrink: 0; flex-basis: auto;" />
+            <ui:VisualElement name="1" style="flex-grow: 1; width: 100%; height: 24%; flex-direction: row; justify-content: space-around; align-items: flex-end;">
+                <ui:Instance template="Card" name="Card" />
             </ui:VisualElement>
-            <ui:VisualElement name="3" style="flex-grow: 1; height: 25%; width: 100%; flex-direction: row; position: relative; flex-wrap: nowrap; justify-content: space-around;">
-                <ui:Instance template="Card" name="Card" style="width: 100%; height: 100%; flex-shrink: 1; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
-                <ui:Instance template="Card" name="Card" style="width: 100%; height: 100%;" />
-                <ui:Instance template="Card" name="Card" style="width: 100%; height: 100%;" />
-                <ui:Instance template="Card" name="Card" style="width: 100%; height: 100%;" />
+            <ui:VisualElement name="2" style="flex-grow: 1; width: 100%; height: 24%; align-self: auto; flex-direction: row; align-items: center; justify-content: space-around;">
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
             </ui:VisualElement>
-            <ui:VisualElement name="4" style="flex-grow: 1; flex-direction: row; width: 100%; height: 25%;" />
+            <ui:VisualElement name="3" style="flex-grow: 1; height: 24%; width: 100%; flex-direction: row; position: relative; flex-wrap: nowrap; justify-content: space-around; align-items: flex-start;">
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+            </ui:VisualElement>
+            <ui:VisualElement name="4" style="flex-grow: 1; flex-direction: row; width: 100%; height: 24%; justify-content: space-around; align-items: flex-start;">
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+                <ui:Instance template="Card" name="Card" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:Instance template="Card" name="Card" />
 </ui:UXML>
