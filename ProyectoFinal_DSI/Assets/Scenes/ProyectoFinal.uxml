@@ -2,13 +2,25 @@
     <ui:Template name="Card" src="project://database/Assets/resources/Card.uxml?fileID=9197481963319205126&amp;guid=634d16974d37ea84992c6e93e9e76d26&amp;type=3#Card" />
     <ui:VisualElement name="All" style="flex-grow: 1; flex-direction: row; background-color: rgb(115, 160, 171);">
         <ui:VisualElement name="Menu" style="flex-grow: 1; width: 20%; height: 100%; background-color: rgb(0, 0, 0);">
-            <ui:VisualElement name="Tabs" style="flex-grow: 1; width: 100%; height: 15%; flex-direction: row;">
-                <ui:VisualElement name="saveButton" style="flex-grow: 1; background-color: rgb(112, 202, 236);" />
-                <ui:VisualElement name="characterButton" style="flex-grow: 1; background-color: rgb(20, 44, 82);" />
+            <ui:VisualElement name="Tabs" style="flex-grow: 1; width: 100%; height: 10%; flex-direction: row;">
+                <ui:VisualElement name="saveButton" style="flex-grow: 1; background-color: rgb(0, 0, 0);" />
+                <ui:VisualElement name="characterButton" style="flex-grow: 1; background-color: rgb(28, 84, 172); border-top-width: 2px; border-right-width: 2px; border-bottom-width: 0; border-left-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
             </ui:VisualElement>
-            <ui:VisualElement name="Content" style="flex-grow: 1; height: 85%; width: 100%;">
-                <ui:VisualElement name="save" style="flex-grow: 1; display: flex; background-color: rgb(112, 202, 236);" />
-                <ui:VisualElement name="character" style="flex-grow: 1; display: none; background-color: rgb(20, 44, 82);" />
+            <ui:VisualElement name="Content" style="flex-grow: 1; height: 90%; width: 100%;">
+                <ui:VisualElement name="save" style="flex-grow: 1; display: none; background-color: rgb(0, 0, 0); align-items: center; justify-content: center;">
+                    <ui:Button text="Save" parse-escape-sequences="true" display-tooltip-when-elided="true" style="background-color: rgb(255, 255, 255); width: 60%; margin-bottom: 20px;" />
+                    <ui:Button text="Load" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgb(255, 255, 255); width: 60%; margin-top: 20px;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="character" style="flex-grow: 1; display: flex; background-color: rgb(28, 84, 172); flex-wrap: wrap; border-top-width: 0; border-right-width: 2px; border-bottom-width: 0; border-left-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+                    <ui:VisualElement name="Mizi" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/resources/mizi.png?fileID=2800000&amp;guid=589f03675c96abc41bd2179be1a0c8bd&amp;type=3#mizi&quot;); width: 50%; height: 25%;" />
+                    <ui:VisualElement name="Till" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/resources/till.png?fileID=2800000&amp;guid=10292b8346c44fb49a5cfb5e3c3b76c6&amp;type=3#till&quot;); width: 50%; height: 25%;" />
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/resources/mizi.png?fileID=2800000&amp;guid=589f03675c96abc41bd2179be1a0c8bd&amp;type=3#mizi&quot;); width: 50%; height: 25%;" />
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/resources/mizi.png?fileID=2800000&amp;guid=589f03675c96abc41bd2179be1a0c8bd&amp;type=3#mizi&quot;); width: 50%; height: 25%;" />
+                    <ui:VisualElement name="Sua" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/resources/sua.png?fileID=2800000&amp;guid=305897de8f357024e80b64b66cf36d14&amp;type=3#sua&quot;); width: 50%; height: 25%;" />
+                    <ui:VisualElement name="Ivan" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/resources/ivan.png?fileID=2800000&amp;guid=3ba5dd329e8f63b4f96afadadbd027d5&amp;type=3#ivan&quot;); width: 50%; height: 25%;" />
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/resources/mizi.png?fileID=2800000&amp;guid=589f03675c96abc41bd2179be1a0c8bd&amp;type=3#mizi&quot;); width: 50%; height: 25%;" />
+                    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/resources/mizi.png?fileID=2800000&amp;guid=589f03675c96abc41bd2179be1a0c8bd&amp;type=3#mizi&quot;); width: 50%; height: 25%;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Chart" style="flex-grow: 1; width: 80%; height: 100%; background-image: url(&quot;project://database/Assets/Images/Fondo.png?fileID=21300000&amp;guid=7d0201fe8165c434d846d74ac16d91c7&amp;type=3#Fondo&quot;); background-color: rgb(0, 0, 0); padding-top: 10px; padding-right: 30px; padding-bottom: 50px; padding-left: 30px;">
