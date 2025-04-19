@@ -11,8 +11,8 @@
                 <ui:VisualElement name="character" style="flex-grow: 1; display: none; background-color: rgb(20, 44, 82);" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Chart" style="flex-grow: 1; width: 80%; height: 100%; background-image: url(&quot;project://database/Assets/Images/Fondo.png?fileID=21300000&amp;guid=7d0201fe8165c434d846d74ac16d91c7&amp;type=3#Fondo&quot;); background-color: rgb(0, 0, 0); padding-top: 30px; padding-right: 30px; padding-bottom: 50px; padding-left: 30px;">
-            <ui:VisualElement name="Hearts" style="flex-grow: 1; width: 60%; height: 10%; align-self: center; align-items: stretch; justify-content: space-between;">
+        <ui:VisualElement name="Chart" style="flex-grow: 1; width: 80%; height: 100%; background-image: url(&quot;project://database/Assets/Images/Fondo.png?fileID=21300000&amp;guid=7d0201fe8165c434d846d74ac16d91c7&amp;type=3#Fondo&quot;); background-color: rgb(0, 0, 0); padding-top: 10px; padding-right: 30px; padding-bottom: 50px; padding-left: 30px;">
+            <ui:VisualElement name="Hearts" style="flex-grow: 1; width: 42%; height: 7%; align-self: center; align-items: stretch; justify-content: flex-start;">
                 <Hearts estado="5" nameStat="heart" />
             </ui:VisualElement>
             <ui:VisualElement name="1" style="flex-grow: 1; width: 100%; height: 24%; flex-direction: row; justify-content: space-around; align-items: flex-end;">
