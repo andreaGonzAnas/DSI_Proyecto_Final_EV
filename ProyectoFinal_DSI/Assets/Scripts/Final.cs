@@ -97,7 +97,7 @@ namespace Final_namespace
             card3 = l4.Q<VisualElement>("C3");
             card4 = l4.Q<VisualElement>("C4");
             card5 = l4.Q<VisualElement>("C5");
-            card1 = l4.Q<VisualElement>("C6");
+            card6 = l4.Q<VisualElement>("C6");
             card7 = l4.Q<VisualElement>("C7");
             card8 = l4.Q<VisualElement>("C8");
 
@@ -107,7 +107,7 @@ namespace Final_namespace
             card12 = l3.Q<VisualElement>("C12");
 
             card13 = l2.Q<VisualElement>("C13");
-            card13 = l2.Q<VisualElement>("C14");
+            card14 = l2.Q<VisualElement>("C14");
 
             card15 = l1.Q<VisualElement>("C15");
 
@@ -148,11 +148,6 @@ namespace Final_namespace
             InitializeUI();
         }
 
-      
-
-       
-
-       
         
 
         void CambioImagen(Sprite imagen)
@@ -174,12 +169,8 @@ namespace Final_namespace
 
             if (selecIndividuo != null)
             {
-                
-
                 //tarjetas_borde_negro();
                 //tarjetas_borde_blanco(tarjeta);
-
-
             }
 
 
@@ -187,23 +178,22 @@ namespace Final_namespace
 
         void InitializeUI()
         {
-
-            Card car1 = new Card(card1, individuos[0]);
-            Card car2 = new Card(card2, individuos[1]);
-            Card car3 = new Card(card3, individuos[2]);
-            Card car4 = new Card(card4, individuos[3]);
-            Card car5 = new Card(card5, individuos[4]);
-            Card car6 = new Card(card6, individuos[5]);
-            Card car7 = new Card(card7, individuos[6]);
-            Card car8 = new Card(card8, individuos[7]);
-            Card car9 = new Card(card9, individuos[8]);
-            Card car10 = new Card(card10, individuos[9]);
-            Card car11 = new Card(card11, individuos[10]);
-            Card car12 = new Card(card12, individuos[11]);
-            Card car13 = new Card(card13, individuos[12]);
-            Card car14 = new Card(card14, individuos[13]);
-            Card car15 = new Card(card15, individuos[14]);
-           
+            int count = individuos.Count;
+            if (count > 0) new Card(card1, individuos[0]);
+            if (count > 1) new Card(card2, individuos[1]);
+            if (count > 2) new Card(card3, individuos[2]);
+            if (count > 3) new Card(card4, individuos[3]);
+            if (count > 4) new Card(card5, individuos[4]);
+            if (count > 5) new Card(card6, individuos[5]);
+            if (count > 6) new Card(card7, individuos[6]);
+            if (count > 7) new Card(card8, individuos[7]);
+            if (count > 8) new Card(card9, individuos[8]);
+            if (count > 9) new Card(card10, individuos[9]);
+            if (count > 10) new Card(card11, individuos[10]);
+            if (count > 11) new Card(card12, individuos[11]);
+            if (count > 12) new Card(card13, individuos[12]);
+            if (count > 13) new Card(card14, individuos[13]);
+            if (count > 14) new Card(card15, individuos[14]);
 
         }
 

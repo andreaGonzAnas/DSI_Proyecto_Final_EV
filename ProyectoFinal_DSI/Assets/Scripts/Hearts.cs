@@ -42,14 +42,14 @@ public class Hearts : VisualElement
 
     void encenderColor()
     {
-        stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.5f);
-        stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.5f);
-        stat3.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.5f);
-        stat4.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.5f);
-        stat5.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.5f);
-        stat6.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.5f);
-        stat7.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.5f);
-        stat8.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.5f);
+        stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
+        stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
+        stat3.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
+        stat4.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
+        stat5.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
+        stat6.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
+        stat7.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
+        stat8.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
 
 
         if (Estado == 1)
