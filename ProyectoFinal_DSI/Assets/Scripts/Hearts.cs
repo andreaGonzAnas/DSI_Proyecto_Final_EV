@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -17,6 +18,12 @@ public class Hearts : VisualElement
     VisualElement stat7 = new VisualElement();
     VisualElement stat8 = new VisualElement();
 
+    List<VisualElement> stats;
+
+
+    //texturas hearts
+    Sprite aliveHeart = Resources.Load<Sprite>("heart");
+    Sprite deadHeart = Resources.Load<Sprite>("dead");
 
     int estado;
     public int Estado
@@ -29,115 +36,35 @@ public class Hearts : VisualElement
         }
     }
 
-    string nameStat;
-    public string NameStat
+    void initializeStats()
     {
-        get => nameStat;
-        set
-        {
-            nameStat = value;
-            cambiarImagen();
-        }
+        stats = new List<VisualElement> { stat1, stat2, stat3, stat4, stat5, stat6, stat7, stat8 };
     }
 
     void encenderColor()
     {
-        stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
-        stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
-        stat3.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
-        stat4.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
-        stat5.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
-        stat6.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
-        stat7.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
-        stat8.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 0.3f);
+        for (int i = 0; i < stats.Count; i++)
+        {
+            if (i < Estado)
+            {
+                stats[i].style.backgroundImage = new StyleBackground(aliveHeart);
+            }
+            else
+            {
+                stats[i].style.backgroundImage = new StyleBackground(deadHeart);
+            }
+        }
 
-
-        if (Estado == 1)
-        {
-            stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-        }
-        if (Estado == 2)
-        {
-            stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-        }
-        if (Estado == 3)
-        {
-            stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat3.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-        }
-        if (Estado == 4)
-        {
-            stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat3.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat4.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-        }
-        if (Estado >= 5)
-        {
-            stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat3.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat4.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat5.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-        }
-        if (Estado >= 6)
-        {
-            stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat3.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat4.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat5.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat6.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-        }
-        if (Estado >= 7)
-        {
-            stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat3.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat4.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat5.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat6.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat7.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-        }
-        if (Estado >= 8)
-        {
-            stat1.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat2.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat3.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat4.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat5.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat6.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat7.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-            stat8.style.unityBackgroundImageTintColor = new Color(1f, 1f, 1f, 1f);
-        }
 
     }
 
-    void cambiarImagen()
-    {
-        string file = nameStat;
-        Sprite nuevaImagen = Resources.Load<Sprite>(file);
-
-        stat1.style.backgroundImage = new StyleBackground(nuevaImagen);
-        stat2.style.backgroundImage = new StyleBackground(nuevaImagen);
-        stat3.style.backgroundImage = new StyleBackground(nuevaImagen);
-        stat4.style.backgroundImage = new StyleBackground(nuevaImagen);
-        stat5.style.backgroundImage = new StyleBackground(nuevaImagen);
-        stat6.style.backgroundImage = new StyleBackground(nuevaImagen);
-        stat7.style.backgroundImage = new StyleBackground(nuevaImagen);
-        stat8.style.backgroundImage = new StyleBackground(nuevaImagen);
-
-    }
 
     public new class UxmlFactory : UxmlFactory<Hearts, UxmlTraits> { };
 
     public new class UxmlTraits : VisualElement.UxmlTraits
     {
         UxmlIntAttributeDescription myEstado = new UxmlIntAttributeDescription { name = "estado", defaultValue = 0 };
-        UxmlStringAttributeDescription myNameStat = new UxmlStringAttributeDescription { name = "nameStat", defaultValue = "oso" };
-
+        
 
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
         {
@@ -145,7 +72,6 @@ public class Hearts : VisualElement
             var semaforo = ve as Hearts;
 
             semaforo.Estado = myEstado.GetValueFromBag(bag, cc);
-            semaforo.NameStat = myNameStat.GetValueFromBag(bag, cc);
 
         }
 
@@ -153,7 +79,7 @@ public class Hearts : VisualElement
 
     public Hearts()
     {
-        cambiarImagen();
+        initializeStats();
 
         // Configurar el tamaño del contenedor principal para ocupar todo el espacio
         style.flexGrow = 1;
