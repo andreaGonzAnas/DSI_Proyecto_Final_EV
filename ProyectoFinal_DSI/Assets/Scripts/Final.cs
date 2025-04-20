@@ -229,11 +229,13 @@ namespace Final_namespace
                     Sprite imagen = selecIndividuo.Image;
                     individuos[14].Image = imagen;
                 }
+
+
                 
 
-
-
             }
+
+            setHearts();
         }
         void setHearts()
         {
@@ -328,7 +330,7 @@ namespace Final_namespace
             selecIndividuo = tarjeta.userData as Individuo;
             Debug.Log(selecIndividuo);
 
-            setHearts();
+            
         }
 
         void InitializeUI()
