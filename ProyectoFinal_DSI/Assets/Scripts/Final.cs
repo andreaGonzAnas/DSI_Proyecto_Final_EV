@@ -69,9 +69,12 @@ namespace Final_namespace
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
+            Debug.Log("root: " + root);
+
             contenedor_menu = root.Q<VisualElement>("Menu");
            
-            
+            Debug.Log("contenedor_menu: " + contenedor_menu);
+
             //botonGuardar = root.Q<Button>("BotonGuardar");
             //botonCargar = root.Q<Button>("BotonCargar");
             //toggleModificar = root.Q<Toggle>("ToggleModificar");
@@ -98,25 +101,25 @@ namespace Final_namespace
             Debug.Log("l4: " + l4);
 
 
-            card1 = l4.Q<VisualElement>("C1");
-            card2 = l4.Q<VisualElement>("C2");
-            card3 = l4.Q<VisualElement>("C3");
-            card4 = l4.Q<VisualElement>("C4");
-            card5 = l4.Q<VisualElement>("C5");
-            card6 = l4.Q<VisualElement>("C6");
-            card7 = l4.Q<VisualElement>("C7");
-            card8 = l4.Q<VisualElement>("C8");
+            card1 = l4.Q("C1");
+            card2 = l4.Q("C2");
+            card3 = l4.Q("C3");
+            card4 = l4.Q("C4");
+            card5 = l4.Q("C5");
+            card6 = l4.Q("C6");
+            card7 = l4.Q("C7");
+            card8 = l4.Q("C8");
 
-            card9 = l3.Q<VisualElement>("C9");
-            card10 = l3.Q<VisualElement>("C10");
-            card11 = l3.Q<VisualElement>("C11");
-            card12 = l3.Q<VisualElement>("C12");
+            card9 = l3.Q("C9");
+            card10 = l3.Q("C10");
+            card11 = l3.Q("C11");
+            card12 = l3.Q("C12");
 
-            card13 = l2.Q<VisualElement>("C13");
-            card14 = l2.Q<VisualElement>("C14");
+            card13 = l2.Q("C13");
+            card14 = l2.Q("C14");
 
-            card15 = l1.Q<VisualElement>("C15");
-
+            card15 = l1.Q("C15");
+            
 
             imagen1 = Resources.Load<Sprite>("mizi");
             imagen2 = Resources.Load<Sprite>("sua");
@@ -132,8 +135,15 @@ namespace Final_namespace
 
             
 
-            VisualElement panelDcha = contenedor_menu.Q<VisualElement>("character");
-            panelDcha.RegisterCallback<ClickEvent>(seleccionTarjeta);
+            VisualElement selec1 = chart.Q("1");
+            VisualElement selec2 = chart.Q("2");
+            VisualElement selec3 = chart.Q("3");
+            VisualElement selec4 = chart.Q("4");
+
+            selec1.RegisterCallback<ClickEvent>(seleccionTarjeta);
+            selec2.RegisterCallback<ClickEvent>(seleccionTarjeta);
+            selec3.RegisterCallback<ClickEvent>(seleccionTarjeta);
+            selec4.RegisterCallback<ClickEvent>(seleccionTarjeta);
 
             img1.RegisterCallback<ClickEvent>(e => CambioImagen(imagen1));
             img2.RegisterCallback<ClickEvent>(e => CambioImagen(imagen2));
@@ -159,6 +169,8 @@ namespace Final_namespace
         void CambioImagen(Sprite imagen)
         {
             Debug.Log("Entro imagen");
+
+            Debug.Log(selecIndividuo);
             if (selecIndividuo != null)
             {
                 Debug.Log(imagen);
@@ -174,10 +186,6 @@ namespace Final_namespace
             selecIndividuo = tarjeta.userData as Individuo;
             Debug.Log(selecIndividuo);
 
-            if (selecIndividuo != null)
-            {
-                
-            }
 
 
         }
@@ -201,6 +209,8 @@ namespace Final_namespace
             Card c13 = new Card(card13, individuos[12]);
             Card c14 = new Card(card14, individuos[13]);
             Card c15 = new Card(card15, individuos[14]);
+
+            
 
         }
 

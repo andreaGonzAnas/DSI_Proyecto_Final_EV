@@ -25,6 +25,7 @@ namespace Final_namespace
             imagen = tarjetaRoot.Q<VisualElement>("Image");
             tarjetaRoot.userData = miIndividuo;
 
+
             tarjetaRoot
                 .Query(className: "Card")
                 .Descendents<VisualElement>()
