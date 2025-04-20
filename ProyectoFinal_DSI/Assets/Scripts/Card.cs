@@ -16,14 +16,17 @@ namespace Final_namespace
 
         public Card(VisualElement tarjetaRoot, Individuo individuo)
         {
+            Debug.Log("Crea carta");
+
+            Debug.Log("root: " + tarjetaRoot + "individuo: " + individuo);
             this.tarjetaRoot = tarjetaRoot;
             this.miIndividuo = individuo;
 
-            imagen = tarjetaRoot.Q<VisualElement>("Imagen");
+            imagen = tarjetaRoot.Q<VisualElement>("Image");
             tarjetaRoot.userData = miIndividuo;
 
             tarjetaRoot
-                .Query(className: "tarjeta")
+                .Query(className: "Card")
                 .Descendents<VisualElement>()
                 .ForEach(elem => elem.pickingMode = PickingMode.Ignore);
 

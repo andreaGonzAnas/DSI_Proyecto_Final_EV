@@ -92,6 +92,12 @@ namespace Final_namespace
 
             //llorando
 
+            Debug.Log("l1: " + l1);
+            Debug.Log("l2: " + l2);
+            Debug.Log("l3: " + l3);
+            Debug.Log("l4: " + l4);
+
+
             card1 = l4.Q<VisualElement>("C1");
             card2 = l4.Q<VisualElement>("C2");
             card3 = l4.Q<VisualElement>("C3");
@@ -143,7 +149,7 @@ namespace Final_namespace
             //input_nombre.RegisterCallback<ChangeEvent<string>>(CambioNombre);
             //input_apellido.RegisterCallback<ChangeEvent<string>>(CambioApellido);
 
-            
+            individuos = Basedatos.getData(individuos);
 
             InitializeUI();
         }
@@ -164,13 +170,13 @@ namespace Final_namespace
         void seleccionTarjeta(ClickEvent e)
         {
             VisualElement tarjeta = e.target as VisualElement;
+            Debug.Log(tarjeta);
             selecIndividuo = tarjeta.userData as Individuo;
             Debug.Log(selecIndividuo);
 
             if (selecIndividuo != null)
             {
-                //tarjetas_borde_negro();
-                //tarjetas_borde_blanco(tarjeta);
+                
             }
 
 
@@ -178,22 +184,23 @@ namespace Final_namespace
 
         void InitializeUI()
         {
-            int count = individuos.Count;
-            if (count > 0) new Card(card1, individuos[0]);
-            if (count > 1) new Card(card2, individuos[1]);
-            if (count > 2) new Card(card3, individuos[2]);
-            if (count > 3) new Card(card4, individuos[3]);
-            if (count > 4) new Card(card5, individuos[4]);
-            if (count > 5) new Card(card6, individuos[5]);
-            if (count > 6) new Card(card7, individuos[6]);
-            if (count > 7) new Card(card8, individuos[7]);
-            if (count > 8) new Card(card9, individuos[8]);
-            if (count > 9) new Card(card10, individuos[9]);
-            if (count > 10) new Card(card11, individuos[10]);
-            if (count > 11) new Card(card12, individuos[11]);
-            if (count > 12) new Card(card13, individuos[12]);
-            if (count > 13) new Card(card14, individuos[13]);
-            if (count > 14) new Card(card15, individuos[14]);
+
+            Debug.Log("card1: "+ card1);
+            Card c1 = new Card(card1, individuos[0]);
+            Card c2 = new Card(card2, individuos[1]);
+            Card c3 = new Card(card3, individuos[2]);
+            Card c4 = new Card(card4, individuos[3]);
+            Card c5 = new Card(card5, individuos[4]);
+            Card c6 = new Card(card6, individuos[5]);
+            Card c7 = new Card(card7, individuos[6]);
+            Card c8 = new Card(card8, individuos[7]);
+            Card c9 = new Card(card9, individuos[8]);
+            Card c10 = new Card(card10, individuos[9]);
+            Card c11 = new Card(card11, individuos[10]);
+            Card c12 = new Card(card12, individuos[11]);
+            Card c13 = new Card(card13, individuos[12]);
+            Card c14 = new Card(card14, individuos[13]);
+            Card c15 = new Card(card15, individuos[14]);
 
         }
 
