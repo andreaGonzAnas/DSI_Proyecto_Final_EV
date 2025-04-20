@@ -169,7 +169,7 @@ namespace Final_namespace
             botonCargar.RegisterCallback<ClickEvent>(CargarJson);
             
 
-            individuos = Basedatos.getData(individuos);
+            individuos = Basedatos.getData();
 
             InitializeUI();
 
@@ -416,26 +416,59 @@ namespace Final_namespace
         private void CargarJson(ClickEvent evt)
         {
             string rutaArchivo = Application.persistentDataPath + "/individuos.json";
-            if (File.Exists(rutaArchivo)) // Verifica si el archivo existe
+
+            // Verifica si el archivo existe
+            if (File.Exists(rutaArchivo))
             {
-                string jsonDesdeArchivo = File.ReadAllText(rutaArchivo); // Lee el contenido del archivo
-                List<Individuo> jsonToLista = JsonHelper.FromJson<Individuo>(jsonDesdeArchivo); // Convierte el JSON en lista
-                individuos = Basedatos.getData(jsonToLista);
+                // Leer el contenido del archivo JSON
+                string jsonContent = File.ReadAllText(rutaArchivo);
+
+                // Deserializar el JSON en la lista de Individuos
+                List<Individuo> jsonToLista = JsonHelper.FromJson<Individuo>(jsonContent);
+
+                individuos = Basedatos.getDataJson(jsonToLista);
                 Debug.Log(individuos);
 
-                individuos.ForEach(elem =>
-                {
-                    Debug.Log(elem.Image.name);
+                InitializeUI();
+                setHearts();
+                Debug.Log("Archivo JSON cargado correctamente");
 
-                    // Recrea las tarjetas visuales al cargar
-                    VisualTreeAsset plantilla = Resources.Load<VisualTreeAsset>("Card");
-                    VisualElement tarjetaPlantilla = plantilla.Instantiate();
-                    //contenedor_dcha.Add(tarjetaPlantilla);
+                // Asignar las imágenes de cada Individuo a sus cartas
+                
+            }
+            else
+            {
+                Debug.LogError("No se encontró el archivo JSON en la ruta: " + rutaArchivo);
+            }
+        }
 
-                    Card tarjeta = new Card(tarjetaPlantilla, elem);
-                });
+        private void AsignarImagenesACartas()
+        {
+            // Asegúrate de que la lista de individuos tiene el tamaño correcto
+            if (individuos.Count >= 15)
+            {
+                // Asigna las imágenes a las cartas
+                card1.style.backgroundImage = new StyleBackground(individuos[0].Image);
+                card2.style.backgroundImage = new StyleBackground(individuos[1].Image);
+                card3.style.backgroundImage = new StyleBackground(individuos[2].Image);
+                card4.style.backgroundImage = new StyleBackground(individuos[3].Image);
+                card5.style.backgroundImage = new StyleBackground(individuos[4].Image);
+                card6.style.backgroundImage = new StyleBackground(individuos[5].Image);
+                card7.style.backgroundImage = new StyleBackground(individuos[6].Image);
+                card8.style.backgroundImage = new StyleBackground(individuos[7].Image);
+                card9.style.backgroundImage = new StyleBackground(individuos[8].Image);
+                card10.style.backgroundImage = new StyleBackground(individuos[9].Image);
+                card11.style.backgroundImage = new StyleBackground(individuos[10].Image);
+                card12.style.backgroundImage = new StyleBackground(individuos[11].Image);
+                card13.style.backgroundImage = new StyleBackground(individuos[12].Image);
+                card14.style.backgroundImage = new StyleBackground(individuos[13].Image);
+                card15.style.backgroundImage = new StyleBackground(individuos[14].Image);
 
-                Debug.Log("Datos cargados desde el archivo JSON.");
+                
+            }
+            else
+            {
+                Debug.LogError("La lista de individuos cargada no tiene suficientes elementos.");
             }
         }
 

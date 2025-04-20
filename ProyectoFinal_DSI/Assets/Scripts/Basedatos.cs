@@ -7,8 +7,9 @@ namespace Final_namespace
 {
     public class Basedatos
     {
-        public static List<Individuo> getData(List<Individuo> jsonId)
+        public static List<Individuo> getData()
         {
+
             List<Individuo> datos = new List<Individuo>();
 
             Individuo c1 = new Individuo(
@@ -87,7 +88,7 @@ namespace Final_namespace
                Resources.Load<Sprite>("ImagenVacia")
 
             );
-         
+
             datos.Add(c1);
             datos.Add(c2);
             datos.Add(c3);
@@ -106,6 +107,13 @@ namespace Final_namespace
 
             //List<Individuo> datos = jsonId;
             return datos;
+        }
+        public static List<Individuo> getDataJson(List<Individuo> jsonId)
+        {
+
+            List<Individuo> datos = jsonId;
+            return datos;
+
         }
     }
 }
