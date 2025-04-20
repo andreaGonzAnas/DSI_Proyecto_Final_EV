@@ -65,7 +65,7 @@ namespace Final_namespace
         
         bool changeImage = false;
 
-
+        Hearts hearts;
 
         private void OnEnable()
         {
@@ -90,6 +90,9 @@ namespace Final_namespace
             //vamos a intentarl p2
 
             chart = root.Q<VisualElement>("Chart");
+
+            
+
             l1 = chart.Q<VisualElement>("1");
             l2 = chart.Q<VisualElement>("2");
             l3 = chart.Q<VisualElement>("3");
@@ -162,6 +165,7 @@ namespace Final_namespace
 
             characters.RegisterCallback<ClickEvent>(seleccionTarjeta);
 
+            
 
             //botonCrear.RegisterCallback<ClickEvent>(NuevaTarjeta);
             //botonGuardar.RegisterCallback<ClickEvent>(GuardarJson);
@@ -172,8 +176,11 @@ namespace Final_namespace
             individuos = Basedatos.getData(individuos);
 
             InitializeUI();
+
+            setHearts();
         }
 
+<<<<<<< Updated upstream
         
         void Pass(ClickEvent e)
         {
@@ -229,6 +236,78 @@ namespace Final_namespace
 
 
             }
+=======
+        void setHearts()
+        {
+            Debug.Log(chart);
+            VisualElement heartsV = chart.Q<VisualElement>("Hearts");
+            hearts = heartsV.Q<Hearts>("HeartsCustom");
+            Debug.Log("hearts: " + hearts);
+
+            Debug.Log(hearts);
+            hearts.Estado = 0;
+
+            //recorrer las cartas
+            if (card9 != null)
+            {
+                if (individuos[8].Image == Resources.Load<Sprite>("ImagenVacia"))
+                {
+                    hearts.Estado++;
+                }
+            }
+
+            if (card10 != null)
+            {
+                if (individuos[9].Image == Resources.Load<Sprite>("ImagenVacia"))
+                {
+                    hearts.Estado++;
+                }
+            }
+
+            if (card11 != null)
+            {
+                if (individuos[10].Image == Resources.Load<Sprite>("ImagenVacia"))
+                {
+                    hearts.Estado++;
+                }
+            }
+
+            if (card12 != null)
+            {
+                if (individuos[11].Image == Resources.Load<Sprite>("ImagenVacia"))
+                {
+                    hearts.Estado++;
+                }
+            }
+
+            if (card13 != null)
+            {
+                if (individuos[12].Image == Resources.Load<Sprite>("ImagenVacia"))
+                {
+                    hearts.Estado++;
+                }
+            }
+
+            if (card14 != null)
+            {
+                if (individuos[13].Image == Resources.Load<Sprite>("ImagenVacia"))
+                {
+                    hearts.Estado++;
+                }
+            }
+
+            if (card15 != null)
+            {
+                if (individuos[14].Image == Resources.Load<Sprite>("ImagenVacia"))
+                {
+                    hearts.Estado++;
+                    
+                }
+            }
+
+            hearts.Estado++;
+
+>>>>>>> Stashed changes
         }
 
         void CambioImagen(Sprite imagen)
@@ -252,8 +331,7 @@ namespace Final_namespace
             selecIndividuo = tarjeta.userData as Individuo;
             Debug.Log(selecIndividuo);
 
-
-
+            setHearts();
         }
 
         void InitializeUI()
