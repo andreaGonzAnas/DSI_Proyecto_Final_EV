@@ -62,6 +62,8 @@ namespace Final_namespace
         Sprite imagen2;
         Sprite imagen3;
         Sprite imagen4;
+        
+        bool changeImage = false;
 
 
 
@@ -135,15 +137,23 @@ namespace Final_namespace
 
             
 
-            VisualElement selec1 = chart.Q("1");
-            VisualElement selec2 = chart.Q("2");
-            VisualElement selec3 = chart.Q("3");
+            //VisualElement selec1 = chart.Q("1");
+            //VisualElement selec2 = chart.Q("2");
+            //VisualElement selec3 = chart.Q("3");
             VisualElement selec4 = chart.Q("4");
+ 
+            VisualElement pass4 = chart.Q("4");
+            VisualElement pass3 = chart.Q("3");
+            VisualElement pass2 = chart.Q("2");
 
-            selec1.RegisterCallback<ClickEvent>(seleccionTarjeta);
-            selec2.RegisterCallback<ClickEvent>(seleccionTarjeta);
-            selec3.RegisterCallback<ClickEvent>(seleccionTarjeta);
+            //selec1.RegisterCallback<ClickEvent>(seleccionTarjeta);
+            //selec2.RegisterCallback<ClickEvent>(seleccionTarjeta);
+            //selec3.RegisterCallback<ClickEvent>(seleccionTarjeta);
             selec4.RegisterCallback<ClickEvent>(seleccionTarjeta);
+
+            pass4.RegisterCallback<ClickEvent>(Pass);
+            pass3.RegisterCallback<ClickEvent>(Pass);
+            pass2.RegisterCallback<ClickEvent>(Pass);
 
             img1.RegisterCallback<ClickEvent>(e => CambioImagen(imagen1));
             img2.RegisterCallback<ClickEvent>(e => CambioImagen(imagen2));
@@ -165,13 +175,68 @@ namespace Final_namespace
         }
 
         
+        void Pass(ClickEvent e)
+        {
+            VisualElement tarjeta = e.target as VisualElement;
+            Debug.Log(tarjeta);
+            selecIndividuo = tarjeta.userData as Individuo;
+            Debug.Log(selecIndividuo);
+
+            Debug.Log("individuo: " + selecIndividuo);
+            if (selecIndividuo != null)
+            {
+                if (individuos[0] == selecIndividuo || individuos[1] == selecIndividuo)
+                {
+                    Sprite imagen = selecIndividuo.Image;
+                    individuos[8].Image = imagen;
+                    //Debug.Log("Entro pass1");
+                }
+                else if (individuos[2] == selecIndividuo || individuos[3]== selecIndividuo)
+                {
+                    Sprite imagen = selecIndividuo.Image;
+                    individuos[9].Image = imagen;
+                }
+                else if (individuos[4] == selecIndividuo || individuos[5] == selecIndividuo)
+                {
+                    Sprite imagen = selecIndividuo.Image;
+                    individuos[10].Image = imagen;
+                }
+                else if (individuos[6] == selecIndividuo || individuos[7] == selecIndividuo)
+                {
+                    Sprite imagen = selecIndividuo.Image;
+                    individuos[11].Image = imagen;
+                }
+                else if (individuos[8] == selecIndividuo || individuos[9] == selecIndividuo)
+                {
+                    changeImage = false;
+                    Sprite imagen = selecIndividuo.Image;
+                    individuos[12].Image = imagen;
+                }
+                else if (individuos[10] == selecIndividuo || individuos[11] == selecIndividuo)
+                {
+                    changeImage = false;
+                    Sprite imagen = selecIndividuo.Image;
+                    individuos[13].Image = imagen;
+                }
+                else if (individuos[12] == selecIndividuo || individuos[13] == selecIndividuo)
+                {
+                    changeImage = false;
+                    Sprite imagen = selecIndividuo.Image;
+                    individuos[14].Image = imagen;
+                }
+                
+
+
+
+            }
+        }
 
         void CambioImagen(Sprite imagen)
         {
             Debug.Log("Entro imagen");
 
-            Debug.Log(selecIndividuo);
-            if (selecIndividuo != null)
+            Debug.Log("individuo: "+selecIndividuo);
+            if (selecIndividuo != null && changeImage)
             {
                 Debug.Log(imagen);
                 selecIndividuo.Image = imagen;
@@ -181,6 +246,7 @@ namespace Final_namespace
 
         void seleccionTarjeta(ClickEvent e)
         {
+            changeImage = true;
             VisualElement tarjeta = e.target as VisualElement;
             Debug.Log(tarjeta);
             selecIndividuo = tarjeta.userData as Individuo;
