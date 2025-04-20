@@ -13,78 +13,78 @@ namespace Final_namespace
 
             Individuo c1 = new Individuo(
 
-                Resources.Load<Sprite>("mizi")
+                Resources.Load<Sprite>("ImagenVacia")
 
              );
 
             Individuo c2 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c3 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c4 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c5 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c6 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c7 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c8 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c9 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c10 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c11 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c12 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c13 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c14 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
             Individuo c15 = new Individuo(
 
-               Resources.Load<Sprite>("mizi")
+               Resources.Load<Sprite>("ImagenVacia")
 
             );
          

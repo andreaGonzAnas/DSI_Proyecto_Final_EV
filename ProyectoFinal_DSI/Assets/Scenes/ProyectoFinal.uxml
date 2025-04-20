@@ -37,7 +37,7 @@
                 <ui:Instance template="Card" name="C11" class="Card" />
                 <ui:Instance template="Card" name="C12" class="Card" />
             </ui:VisualElement>
-            <ui:VisualElement name="4" style="flex-grow: 1; flex-direction: row; width: 100%; height: 24%; justify-content: space-around; align-items: flex-start;">
+            <ui:VisualElement name="4" style="flex-grow: 1; flex-direction: row; width: 100%; height: 24%; justify-content: space-around; align-items: center; align-self: auto;">
                 <ui:Instance template="Card" name="C1" class="Card" />
                 <ui:Instance template="Card" name="C2" class="Card" />
                 <ui:Instance template="Card" name="C3" class="Card" />
