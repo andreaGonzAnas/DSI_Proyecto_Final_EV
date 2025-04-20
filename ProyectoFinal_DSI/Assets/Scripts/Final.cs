@@ -12,7 +12,6 @@ using static UnityEngine.GraphicsBuffer;
 namespace Final_namespace
 {
 
-
     public class Final : MonoBehaviour
     {
         VisualElement botonCrear;
@@ -180,7 +179,6 @@ namespace Final_namespace
             setHearts();
         }
 
-<<<<<<< Updated upstream
         
         void Pass(ClickEvent e)
         {
@@ -236,7 +234,7 @@ namespace Final_namespace
 
 
             }
-=======
+        }
         void setHearts()
         {
             Debug.Log(chart);
@@ -307,7 +305,6 @@ namespace Final_namespace
 
             hearts.Estado++;
 
->>>>>>> Stashed changes
         }
 
         void CambioImagen(Sprite imagen)
