@@ -21,6 +21,7 @@ namespace Final_namespace
         VisualElement contenedor_menu;
         VisualElement content;
         VisualElement characters;
+        VisualElement tabs;
 
         VisualElement chart;
         VisualElement l1;
@@ -76,21 +77,22 @@ namespace Final_namespace
            
             Debug.Log("contenedor_menu: " + contenedor_menu);
 
-            //botonGuardar = root.Q<Button>("BotonGuardar");
-            //botonCargar = root.Q<Button>("BotonCargar");
-            //toggleModificar = root.Q<Toggle>("ToggleModificar");
+           
+            
+            
 
 
             //vamos a intentarlo
-
+            
             content = contenedor_menu.Q<VisualElement>("Content");
             characters = contenedor_menu.Q<VisualElement>("character");
+            
+            VisualElement saveLoad = content.Q<VisualElement>("save");
 
-            //vamos a intentarl p2
+            botonGuardar = saveLoad.Q<Button>("Save");
+            botonCargar = saveLoad.Q<Button>("Load");
 
             chart = root.Q<VisualElement>("Chart");
-
-            
 
             l1 = chart.Q<VisualElement>("1");
             l2 = chart.Q<VisualElement>("2");
@@ -139,18 +141,14 @@ namespace Final_namespace
 
             
 
-            //VisualElement selec1 = chart.Q("1");
-            //VisualElement selec2 = chart.Q("2");
-            //VisualElement selec3 = chart.Q("3");
+           
             VisualElement selec4 = chart.Q("4");
  
             VisualElement pass4 = chart.Q("4");
             VisualElement pass3 = chart.Q("3");
             VisualElement pass2 = chart.Q("2");
 
-            //selec1.RegisterCallback<ClickEvent>(seleccionTarjeta);
-            //selec2.RegisterCallback<ClickEvent>(seleccionTarjeta);
-            //selec3.RegisterCallback<ClickEvent>(seleccionTarjeta);
+            
             selec4.RegisterCallback<ClickEvent>(seleccionTarjeta);
 
             pass4.RegisterCallback<ClickEvent>(Pass);
@@ -166,11 +164,10 @@ namespace Final_namespace
 
             
 
-            //botonCrear.RegisterCallback<ClickEvent>(NuevaTarjeta);
-            //botonGuardar.RegisterCallback<ClickEvent>(GuardarJson);
-            //botonCargar.RegisterCallback<ClickEvent>(CargarJson);
-            //input_nombre.RegisterCallback<ChangeEvent<string>>(CambioNombre);
-            //input_apellido.RegisterCallback<ChangeEvent<string>>(CambioApellido);
+            
+            botonGuardar.RegisterCallback<ClickEvent>(GuardarJson);
+            botonCargar.RegisterCallback<ClickEvent>(CargarJson);
+            
 
             individuos = Basedatos.getData(individuos);
 
@@ -406,7 +403,7 @@ namespace Final_namespace
 
 
 
-        }
+        }*/
 
         private void GuardarJson(ClickEvent evt)
         {
@@ -428,19 +425,19 @@ namespace Final_namespace
 
                 individuos.ForEach(elem =>
                 {
-                    Debug.Log(elem.Nombre + " " + elem.Apellido + " " + elem.Image.name);
+                    Debug.Log(elem.Image.name);
 
                     // Recrea las tarjetas visuales al cargar
-                    VisualTreeAsset plantilla = Resources.Load<VisualTreeAsset>("Tarjeta");
+                    VisualTreeAsset plantilla = Resources.Load<VisualTreeAsset>("Card");
                     VisualElement tarjetaPlantilla = plantilla.Instantiate();
-                    contenedor_dcha.Add(tarjetaPlantilla);
+                    //contenedor_dcha.Add(tarjetaPlantilla);
 
                     Card tarjeta = new Card(tarjetaPlantilla, elem);
                 });
 
                 Debug.Log("Datos cargados desde el archivo JSON.");
             }
-        }*/
+        }
 
 
     }
