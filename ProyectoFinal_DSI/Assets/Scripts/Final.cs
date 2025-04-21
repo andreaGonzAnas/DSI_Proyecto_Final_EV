@@ -191,7 +191,7 @@ namespace Final_namespace
                 {
                     Sprite imagen = selecIndividuo.Image;
                     individuos[8].Image = imagen;
-                    //Debug.Log("Entro pass1");
+                   
                 }
                 else if (individuos[2] == selecIndividuo || individuos[3]== selecIndividuo)
                 {
@@ -354,56 +354,7 @@ namespace Final_namespace
 
         }
 
-        /*void NuevaTarjeta(ClickEvent evt)
-        {
-            if (!toggleModificar.value)
-            {
-                VisualTreeAsset plantilla = Resources.Load<VisualTreeAsset>("Tarjeta");
-                VisualElement tarjetaPlantilla = plantilla.Instantiate();
-
-                contenedor_dcha.Add(tarjetaPlantilla);
-                tarjetas_borde_negro();
-                tarjetas_borde_blanco(tarjetaPlantilla);
-
-                Individuo individuo = new Individuo(input_nombre.value, input_apellido.value, imagen1);
-                Card tarjeta = new Card(tarjetaPlantilla, individuo);
-                selecIndividuo = individuo;
-
-                Debug.Log(individuos);
-                individuos.Add(individuo);
-                individuos.ForEach(elem => Debug.Log(elem.Nombre + " " + elem.Apellido));
-            }
-        }
-
-        void tarjetas_borde_negro()
-        {
-            List<VisualElement> list = contenedor_dcha.Children().ToList();
-            list.ForEach(elem =>
-            {
-                VisualElement tarjeta = elem.Q("Tarjeta");
-
-                tarjeta.style.borderBottomColor = Color.black;
-                tarjeta.style.borderRightColor = Color.black;
-                tarjeta.style.borderTopColor = Color.black;
-                tarjeta.style.borderLeftColor = Color.black;
-
-            });
-
-        }
-
-        void tarjetas_borde_blanco(VisualElement tar)
-        {
-
-            VisualElement tarjeta = tar.Q("Tarjeta");
-
-            tarjeta.style.borderBottomColor = Color.white;
-            tarjeta.style.borderRightColor = Color.white;
-            tarjeta.style.borderTopColor = Color.white;
-            tarjeta.style.borderLeftColor = Color.white;
-
-
-
-        }*/
+       
 
         private void GuardarJson(ClickEvent evt)
         {
