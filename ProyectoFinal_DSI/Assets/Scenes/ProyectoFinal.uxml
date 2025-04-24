@@ -20,24 +20,24 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Chart" style="flex-grow: 1; width: 80%; height: 100%; background-image: url(&quot;project://database/Assets/Images/Fondo.png?fileID=21300000&amp;guid=7d0201fe8165c434d846d74ac16d91c7&amp;type=3#Fondo&quot;); background-color: rgb(0, 0, 0); padding-top: 10px; padding-right: 30px; padding-bottom: 50px; padding-left: 30px;">
+        <ui:VisualElement name="Chart" style="flex-grow: 1; width: 80%; height: 100%; background-image: url(&quot;project://database/Assets/Images/Fondo.png?fileID=21300000&amp;guid=7d0201fe8165c434d846d74ac16d91c7&amp;type=3#Fondo&quot;); background-color: rgb(0, 0, 0); padding-top: 10px; padding-right: 30px; padding-bottom: 50px; padding-left: 30px; align-items: center;">
             <ui:VisualElement name="Hearts" style="flex-grow: 1; width: 42%; height: 7%; align-self: center; align-items: stretch; justify-content: flex-start;">
                 <Hearts estado="2" nameStat="heart" name="HeartsCustom" />
             </ui:VisualElement>
-            <ui:VisualElement name="1" style="flex-grow: 1; width: 100%; height: 24%; flex-direction: row; justify-content: space-around; align-items: flex-end;">
+            <ui:VisualElement name="1" style="flex-grow: 1; width: 90%; height: 24%; flex-direction: row; justify-content: space-around; align-items: center;">
                 <ui:Instance template="Card" name="C15" class="Card" />
             </ui:VisualElement>
-            <ui:VisualElement name="2" style="flex-grow: 1; width: 100%; height: 24%; align-self: auto; flex-direction: row; align-items: center; justify-content: space-around;">
+            <ui:VisualElement name="2" style="flex-grow: 1; width: 90%; height: 24%; align-self: auto; flex-direction: row; align-items: flex-start; justify-content: space-around;">
                 <ui:Instance template="Card" name="C13" class="Card" />
                 <ui:Instance template="Card" name="C14" class="Card" />
             </ui:VisualElement>
-            <ui:VisualElement name="3" style="flex-grow: 1; height: 24%; width: 100%; flex-direction: row; position: relative; flex-wrap: nowrap; justify-content: space-around; align-items: flex-start;">
+            <ui:VisualElement name="3" style="flex-grow: 1; height: 24%; width: 90%; flex-direction: row; position: relative; flex-wrap: nowrap; justify-content: space-around; align-items: flex-start;">
                 <ui:Instance template="Card" name="C9" class="Card" />
                 <ui:Instance template="Card" name="C10" class="Card" />
                 <ui:Instance template="Card" name="C11" class="Card" />
                 <ui:Instance template="Card" name="C12" class="Card" />
             </ui:VisualElement>
-            <ui:VisualElement name="4" style="flex-grow: 1; flex-direction: row; width: 100%; height: 24%; justify-content: space-around; align-items: center; align-self: auto;">
+            <ui:VisualElement name="4" style="flex-grow: 1; flex-direction: row; width: 90%; height: 24%; justify-content: space-around; align-items: flex-start; align-self: auto;">
                 <ui:Instance template="Card" name="C1" class="Card" />
                 <ui:Instance template="Card" name="C2" class="Card" />
                 <ui:Instance template="Card" name="C3" class="Card" />
