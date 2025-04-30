@@ -57,12 +57,16 @@ namespace Final_namespace
         VisualElement img2;
         VisualElement img3;
         VisualElement img4;
+        VisualElement img5;
+        VisualElement img6;
 
         Sprite imagen1;
         Sprite imagen2;
         Sprite imagen3;
         Sprite imagen4;
-        
+        Sprite imagen5;
+        Sprite imagen6;
+
         bool changeImage = false;
 
         Hearts hearts;
@@ -131,17 +135,21 @@ namespace Final_namespace
             imagen2 = Resources.Load<Sprite>("sua");
             imagen3 = Resources.Load<Sprite>("till");
             imagen4 = Resources.Load<Sprite>("ivan");
+            imagen5 = Resources.Load<Sprite>("luka");
+            imagen6 = Resources.Load<Sprite>("ImagenVacia");
 
 
             img1 = root.Q<VisualElement>("Mizi");
             img2 = root.Q<VisualElement>("Sua");
             img3 = root.Q<VisualElement>("Till");
             img4 = root.Q<VisualElement>("Ivan");
+            img5 = root.Q<VisualElement>("Luka");
+            img6 = root.Q<VisualElement>("Reset");
 
 
-            
 
-           
+
+
             VisualElement selec4 = chart.Q("4");
  
             VisualElement pass4 = chart.Q("4");
@@ -159,6 +167,8 @@ namespace Final_namespace
             img2.RegisterCallback<ClickEvent>(e => CambioImagen(imagen2));
             img3.RegisterCallback<ClickEvent>(e => CambioImagen(imagen3));
             img4.RegisterCallback<ClickEvent>(e => CambioImagen(imagen4));
+            img5.RegisterCallback<ClickEvent>(e => CambioImagen(imagen5));
+            img6.RegisterCallback<ClickEvent>(e => CambioImagen(imagen6));
 
             characters.RegisterCallback<ClickEvent>(seleccionTarjeta);
 

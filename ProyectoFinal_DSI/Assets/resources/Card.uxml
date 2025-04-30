@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/card.uss?fileID=7433441132597879392&amp;guid=4fb162ab29f93b347bb772d19d46a16d&amp;type=3#card" />
     <ui:VisualElement name="Card" picking-mode="Ignore" class="Card" style="flex-grow: 0; width: 80px; height: 120px; background-color: rgba(0, 0, 0, 0); flex-shrink: 0; flex-basis: auto; background-image: url(&quot;project://database/Assets/Images/cubito.png?fileID=2800000&amp;guid=ec0d83809b8ebe849b28de81494ff770&amp;type=3#cubito&quot;); flex-direction: column; margin-right: 0; margin-left: 0; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; margin-top: 0; margin-bottom: 0; justify-content: space-around; align-items: center; align-self: center;">
-        <ui:VisualElement name="Image" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/resources/mizi.png?fileID=2800000&amp;guid=589f03675c96abc41bd2179be1a0c8bd&amp;type=3#mizi&quot;); align-items: auto; width: 100%; height: 100%;" />
+        <ui:VisualElement name="Image" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/ImagenVacia.png?fileID=2800000&amp;guid=2207fbe35ba388a41bfd85479d0b55da&amp;type=3#ImagenVacia&quot;); align-items: auto; width: 100%; height: 100%;" />
     </ui:VisualElement>
 </ui:UXML>
