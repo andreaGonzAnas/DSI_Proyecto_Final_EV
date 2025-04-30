@@ -7,6 +7,7 @@ using UnityEditor;
 using System.IO;
 using static Unity.VisualScripting.LudiqRootObjectEditor;
 using static UnityEngine.GraphicsBuffer;
+using UnityEditor.U2D;
 
 
 namespace Final_namespace
@@ -199,39 +200,172 @@ namespace Final_namespace
             {
                 if (individuos[0] == selecIndividuo || individuos[1] == selecIndividuo)
                 {
+                    if (individuos[0] == selecIndividuo && individuos[0].Image.name != "ImagenVacia")
+                    {  
+                        //poner 1 a dark
+                        string name = individuos[1].Image.name;
+                        
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[1].Image = sprite;
+                    }
+                    else if(individuos[1] == selecIndividuo && individuos[1].Image.name != "ImagenVacia")
+                    {
+                        //poner 0 a dark
+                        string name = individuos[0].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[0].Image = sprite;
+                    }
+
                     Sprite imagen = selecIndividuo.Image;
                     individuos[8].Image = imagen;
                    
                 }
                 else if (individuos[2] == selecIndividuo || individuos[3]== selecIndividuo)
                 {
+                    if (individuos[2] == selecIndividuo && individuos[2].Image.name != "ImagenVacia")
+                    {
+                        //poner 3 a dark
+                        string name = individuos[3].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[3].Image = sprite;
+                    }
+                    else if (individuos[3] == selecIndividuo && individuos[3].Image.name != "ImagenVacia")
+                    {
+                        //poner 3 a dark
+                        string name = individuos[2].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[2].Image = sprite;
+                    }
+
                     Sprite imagen = selecIndividuo.Image;
                     individuos[9].Image = imagen;
                 }
                 else if (individuos[4] == selecIndividuo || individuos[5] == selecIndividuo)
                 {
+                    if (individuos[4] == selecIndividuo && individuos[4].Image.name != "ImagenVacia")
+                    {
+                        //poner 5 a dark
+                        string name = individuos[5].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[5].Image = sprite;
+                    }
+                    else if (individuos[5] == selecIndividuo && individuos[5].Image.name != "ImagenVacia")
+                    {
+                        //poner 4 a dark
+                        string name = individuos[4].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[4].Image = sprite;
+                    }
+
                     Sprite imagen = selecIndividuo.Image;
                     individuos[10].Image = imagen;
                 }
                 else if (individuos[6] == selecIndividuo || individuos[7] == selecIndividuo)
                 {
+                    if (individuos[6] == selecIndividuo && individuos[6].Image.name != "ImagenVacia")
+                    {
+                        //poner 7 a dark
+                        string name = individuos[7].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[7].Image = sprite;
+                    }
+                    else if (individuos[7] == selecIndividuo && individuos[7].Image.name != "ImagenVacia")
+                    {
+                        //poner 6 a dark
+                        string name = individuos[6].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[6].Image = sprite;
+                    }
+
                     Sprite imagen = selecIndividuo.Image;
                     individuos[11].Image = imagen;
                 }
                 else if (individuos[8] == selecIndividuo || individuos[9] == selecIndividuo)
                 {
+                    if (individuos[8] == selecIndividuo && individuos[8].Image.name != "ImagenVacia")
+                    {
+                        //poner 9 a dark
+                        string name = individuos[9].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[9].Image = sprite;
+                    }
+                    else if (individuos[9] == selecIndividuo && individuos[9].Image.name != "ImagenVacia")
+                    {
+                        //poner 8 a dark
+                        string name = individuos[8].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[8].Image = sprite;
+                    }
+
                     changeImage = false;
                     Sprite imagen = selecIndividuo.Image;
                     individuos[12].Image = imagen;
                 }
                 else if (individuos[10] == selecIndividuo || individuos[11] == selecIndividuo)
                 {
+                    if (individuos[10] == selecIndividuo && individuos[10].Image.name != "ImagenVacia")
+                    {
+                        //poner 11 a dark
+                        string name = individuos[11].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[11].Image = sprite;
+                    }
+                    else if (individuos[11] == selecIndividuo && individuos[11].Image.name != "ImagenVacia")
+                    {
+                        //poner 10 a dark
+                        string name = individuos[10].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[10].Image = sprite;
+                    }
+
                     changeImage = false;
                     Sprite imagen = selecIndividuo.Image;
                     individuos[13].Image = imagen;
                 }
                 else if (individuos[12] == selecIndividuo || individuos[13] == selecIndividuo)
                 {
+                    if (individuos[12] == selecIndividuo && individuos[12].Image.name != "ImagenVacia")
+                    {
+                        //poner 1 a dark
+                        string name = individuos[13].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[13].Image = sprite;
+                    }
+                    else if (individuos[13] == selecIndividuo && individuos[13].Image.name != "ImagenVacia")
+                    {
+                        //poner 0 a dark
+                        string name = individuos[12].Image.name;
+
+                        //Sprite sprite = Resources.Load<Sprite>(name + "Dark"); //esto es lo q hay que poner
+                        Sprite sprite = Resources.Load<Sprite>("miziDark");
+                        individuos[12].Image = sprite;
+                    }
+
                     changeImage = false;
                     Sprite imagen = selecIndividuo.Image;
                     individuos[14].Image = imagen;
