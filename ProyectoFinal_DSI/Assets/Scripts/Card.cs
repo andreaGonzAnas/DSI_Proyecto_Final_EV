@@ -16,9 +16,6 @@ namespace Final_namespace
 
         public Card(VisualElement tarjetaRoot, Individuo individuo)
         {
-            //Debug.Log("Crea carta");
-
-           // Debug.Log("root: " + tarjetaRoot + "individuo: " + individuo);
             this.tarjetaRoot = tarjetaRoot;
             this.miIndividuo = individuo;
 

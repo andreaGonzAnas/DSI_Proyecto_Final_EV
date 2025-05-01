@@ -75,18 +75,8 @@ namespace Final_namespace
         private void OnEnable()
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-
-            //Debug.Log("root: " + root);
-
             contenedor_menu = root.Q<VisualElement>("Menu");
            
-            //Debug.Log("contenedor_menu: " + contenedor_menu);
-
-           
-            
-            
-
-
             //vamos a intentarlo
             
             content = contenedor_menu.Q<VisualElement>("Content");
@@ -104,13 +94,6 @@ namespace Final_namespace
             l3 = chart.Q<VisualElement>("3");
             l4 = chart.Q<VisualElement>("4");
 
-            //llorando
-            /*
-            Debug.Log("l1: " + l1);
-            Debug.Log("l2: " + l2);
-            Debug.Log("l3: " + l3);
-            Debug.Log("l4: " + l4);
-            */
 
             card1 = l4.Q("C1");
             card2 = l4.Q("C2");
@@ -146,9 +129,6 @@ namespace Final_namespace
             img4 = root.Q<VisualElement>("Ivan");
             img5 = root.Q<VisualElement>("Luka");
             img6 = root.Q<VisualElement>("Reset");
-
-
-
 
 
             VisualElement selec4 = chart.Q("4");
@@ -191,11 +171,8 @@ namespace Final_namespace
         void Pass(ClickEvent e)
         {
             VisualElement tarjeta = e.target as VisualElement;
-            //Debug.Log(tarjeta);
             selecIndividuo = tarjeta.userData as Individuo;
-           // Debug.Log(selecIndividuo);
-
-            //Debug.Log("individuo: " + selecIndividuo);
+           
             if (selecIndividuo != null)
             {
                 // PAR 0 y 1 -> destino 8
@@ -554,12 +531,8 @@ namespace Final_namespace
         }
         void setHearts()
         {
-            //Debug.Log(chart);
             VisualElement heartsV = chart.Q<VisualElement>("Hearts");
             hearts = heartsV.Q<Hearts>("HeartsCustom");
-           // Debug.Log("hearts: " + hearts);
-
-           // Debug.Log(hearts);
             hearts.Estado = 0;
 
             //recorrer las cartas
@@ -626,12 +599,8 @@ namespace Final_namespace
 
         void CambioImagen(Sprite imagen)
         {
-           // Debug.Log("Entro imagen");
-
-           // Debug.Log("individuo: "+selecIndividuo);
             if (selecIndividuo != null && changeImage)
             {
-               // Debug.Log(imagen);
                 selecIndividuo.Image = imagen;
             }
 
@@ -641,11 +610,7 @@ namespace Final_namespace
         {
             changeImage = true;
             VisualElement tarjeta = e.target as VisualElement;
-           // Debug.Log(tarjeta);
             selecIndividuo = tarjeta.userData as Individuo;
-           // Debug.Log(selecIndividuo);
-
-            
         }
 
         void InitializeUI()
@@ -679,7 +644,6 @@ namespace Final_namespace
             string rutaArchivo = Application.persistentDataPath + "/individuos.json"; //Guardamos la ruta del Json
             string listaToJson = JsonHelper.ToJSon(individuos, true); // Convierte la lista a JSON
             File.WriteAllText(rutaArchivo, listaToJson); // Guarda el JSON en un archivo
-            //Debug.Log("Archivo JSON guardado en: " + rutaArchivo);
         }
 
         private void CargarJson(ClickEvent evt)
@@ -696,18 +660,14 @@ namespace Final_namespace
                 List<Individuo> jsonToLista = JsonHelper.FromJson<Individuo>(jsonContent);
 
                 individuos = Basedatos.getDataJson(jsonToLista);
-                //Debug.Log(individuos);
 
                 InitializeUI();
                 setHearts();
-                //Debug.Log("Archivo JSON cargado correctamente");
-
-                // Asignar las imágenes de cada Individuo a sus cartas
                 
             }
             else
             {
-                //Debug.LogError("No se encontró el archivo JSON en la ruta: " + rutaArchivo);
+                Debug.LogError("No se encontró el archivo JSON en la ruta: " + rutaArchivo);
             }
         }
 
@@ -737,7 +697,7 @@ namespace Final_namespace
             }
             else
             {
-                //Debug.LogError("La lista de individuos cargada no tiene suficientes elementos.");
+                Debug.LogError("La lista de individuos cargada no tiene suficientes elementos.");
             }
         }
 

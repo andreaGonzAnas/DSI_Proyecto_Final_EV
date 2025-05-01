@@ -33,14 +33,12 @@ public class MenuController : MonoBehaviour
 
         save_button.RegisterCallback<MouseDownEvent>(evt =>
         {
-            Debug.Log("Pestaña azul");
             NoContenido();
             save_content.style.display = DisplayStyle.Flex;
         });
 
         character_button.RegisterCallback<MouseDownEvent>(evt =>
         {
-            Debug.Log("Pestaña verde");
             NoContenido();
             character_content.style.display = DisplayStyle.Flex;
         });
