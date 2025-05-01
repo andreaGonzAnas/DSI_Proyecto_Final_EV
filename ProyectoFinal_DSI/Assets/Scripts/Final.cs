@@ -198,6 +198,7 @@ namespace Final_namespace
             //Debug.Log("individuo: " + selecIndividuo);
             if (selecIndividuo != null)
             {
+                // PAR 0 y 1 -> destino 8
                 if (individuos[0] == selecIndividuo || individuos[1] == selecIndividuo)
                 {
                     int selectedIndex = individuos[0] == selecIndividuo ? 0 : 1;
@@ -208,25 +209,22 @@ namespace Final_namespace
 
                     if (selecIndividuo.Image.name != "ImagenVacia" && selecIndividuo.Image.name != "ImagenVaciaR")
                     {
-                        // Si el seleccionado está en rojo, quitar el rojo
                         if (isSelectedRed)
                         {
                             string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
                             Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
                             individuos[selectedIndex].Image = selectedSprite;
 
-                            // Poner rojo al otro
                             string otherName = individuos[otherIndex].Image.name;
                             if (!otherName.EndsWith("R"))
                             {
-                                string newOtherName = otherName + "R"; // Añadir "R"
+                                string newOtherName = otherName + "R";
                                 Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
                                 individuos[otherIndex].Image = otherSprite;
                             }
                         }
                         else
                         {
-                            // Si el seleccionado no está en rojo, poner rojo al otro
                             string otherName = individuos[otherIndex].Image.name;
                             if (!otherName.EndsWith("R"))
                             {
@@ -236,52 +234,37 @@ namespace Final_namespace
                             }
                         }
                     }
-                    else 
+                    else
                     {
-                        Debug.Log("es imagen vacia");
                         string otherName = individuos[otherIndex].Image.name;
                         if (otherName.EndsWith("R"))
                         {
-                            Debug.Log("acaba en r");
-                            string newOtherName = otherName.Substring(0, otherName.Length - 1); // Eliminar "R"
+                            string newOtherName = otherName.Substring(0, otherName.Length - 1);
                             Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
                             individuos[otherIndex].Image = otherSprite;
                         }
                     }
 
-                    // Mostrar imagen seleccionada en el destino correspondiente
                     individuos[8].Image = individuos[selectedIndex].Image;
-                    
                 }
-                else if (individuos[2] == selecIndividuo || individuos[3] == selecIndividuo)
+
+                // PAR 2 y 3 -> destino 9
+                if (individuos[2] == selecIndividuo || individuos[3] == selecIndividuo)
                 {
-                    if (selecIndividuo.Image.name != "ImagenVacia")
+                    int selectedIndex = individuos[2] == selecIndividuo ? 2 : 3;
+                    int otherIndex = selectedIndex == 2 ? 3 : 2;
+
+                    string selectedName = individuos[selectedIndex].Image.name;
+                    bool isSelectedRed = selectedName.EndsWith("R");
+
+                    if (selecIndividuo.Image.name != "ImagenVacia" && selecIndividuo.Image.name != "ImagenVaciaR")
                     {
-                        int selectedIndex = individuos[2] == selecIndividuo ? 2 : 3;
-                        int otherIndex = selectedIndex == 2 ? 3 : 2;
-
-                        string selectedName = individuos[selectedIndex].Image.name;
-                        bool isSelectedRed = selectedName.EndsWith("R");
-
-                        // Si el seleccionado está en rojo, quitar el rojo
                         if (isSelectedRed)
                         {
                             string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
                             Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
                             individuos[selectedIndex].Image = selectedSprite;
 
-                            // Poner rojo al otro
-                            string otherName = individuos[otherIndex].Image.name;
-                            if (!otherName.EndsWith("R"))
-                            {
-                                string newOtherName = otherName + "R"; // Añadir "R"
-                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
-                                individuos[otherIndex].Image = otherSprite;
-                            }
-                        }
-                        else
-                        {
-                            // Si el seleccionado no está en rojo, poner rojo al otro
                             string otherName = individuos[otherIndex].Image.name;
                             if (!otherName.EndsWith("R"))
                             {
@@ -290,40 +273,8 @@ namespace Final_namespace
                                 individuos[otherIndex].Image = otherSprite;
                             }
                         }
-
-                        // Mostrar imagen seleccionada en el destino correspondiente
-                        individuos[9].Image = individuos[selectedIndex].Image;
-                    }
-                }
-                else if (individuos[4] == selecIndividuo || individuos[5] == selecIndividuo)
-                {
-                    if (selecIndividuo.Image.name != "ImagenVacia")
-                    {
-                        int selectedIndex = individuos[4] == selecIndividuo ? 4 : 5;
-                        int otherIndex = selectedIndex == 4 ? 5 : 4;
-
-                        string selectedName = individuos[selectedIndex].Image.name;
-                        bool isSelectedRed = selectedName.EndsWith("R");
-
-                        // Si el seleccionado está en rojo, quitar el rojo
-                        if (isSelectedRed)
-                        {
-                            string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
-                            Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
-                            individuos[selectedIndex].Image = selectedSprite;
-
-                            // Poner rojo al otro
-                            string otherName = individuos[otherIndex].Image.name;
-                            if (!otherName.EndsWith("R"))
-                            {
-                                string newOtherName = otherName + "R"; // Añadir "R"
-                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
-                                individuos[otherIndex].Image = otherSprite;
-                            }
-                        }
                         else
                         {
-                            // Si el seleccionado no está en rojo, poner rojo al otro
                             string otherName = individuos[otherIndex].Image.name;
                             if (!otherName.EndsWith("R"))
                             {
@@ -332,40 +283,38 @@ namespace Final_namespace
                                 individuos[otherIndex].Image = otherSprite;
                             }
                         }
-
-                        // Mostrar imagen seleccionada en el destino correspondiente
-                        individuos[10].Image = individuos[selectedIndex].Image;
                     }
-                }
-                else if (individuos[6] == selecIndividuo || individuos[7] == selecIndividuo)
-                {
-                    if (selecIndividuo.Image.name != "ImagenVacia")
+                    else
                     {
-                        int selectedIndex = individuos[6] == selecIndividuo ? 6 : 7;
-                        int otherIndex = selectedIndex == 6 ? 7 : 6;
+                        string otherName = individuos[otherIndex].Image.name;
+                        if (otherName.EndsWith("R"))
+                        {
+                            string newOtherName = otherName.Substring(0, otherName.Length - 1);
+                            Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                            individuos[otherIndex].Image = otherSprite;
+                        }
+                    }
 
-                        string selectedName = individuos[selectedIndex].Image.name;
-                        bool isSelectedRed = selectedName.EndsWith("R");
+                    individuos[9].Image = individuos[selectedIndex].Image;
+                }
 
-                        // Si el seleccionado está en rojo, quitar el rojo
+                // PAR 4 y 5 -> destino 10
+                if (individuos[4] == selecIndividuo || individuos[5] == selecIndividuo)
+                {
+                    int selectedIndex = individuos[4] == selecIndividuo ? 4 : 5;
+                    int otherIndex = selectedIndex == 4 ? 5 : 4;
+
+                    string selectedName = individuos[selectedIndex].Image.name;
+                    bool isSelectedRed = selectedName.EndsWith("R");
+
+                    if (selecIndividuo.Image.name != "ImagenVacia" && selecIndividuo.Image.name != "ImagenVaciaR")
+                    {
                         if (isSelectedRed)
                         {
                             string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
                             Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
                             individuos[selectedIndex].Image = selectedSprite;
 
-                            // Poner rojo al otro
-                            string otherName = individuos[otherIndex].Image.name;
-                            if (!otherName.EndsWith("R"))
-                            {
-                                string newOtherName = otherName + "R"; // Añadir "R"
-                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
-                                individuos[otherIndex].Image = otherSprite;
-                            }
-                        }
-                        else
-                        {
-                            // Si el seleccionado no está en rojo, poner rojo al otro
                             string otherName = individuos[otherIndex].Image.name;
                             if (!otherName.EndsWith("R"))
                             {
@@ -374,40 +323,8 @@ namespace Final_namespace
                                 individuos[otherIndex].Image = otherSprite;
                             }
                         }
-
-                        // Mostrar imagen seleccionada en el destino correspondiente
-                        individuos[11].Image = individuos[selectedIndex].Image;
-                    }
-                }
-                else if (individuos[8] == selecIndividuo || individuos[9] == selecIndividuo)
-                {
-                    if (selecIndividuo.Image.name != "ImagenVacia")
-                    {
-                        int selectedIndex = individuos[8] == selecIndividuo ? 8 : 9;
-                        int otherIndex = selectedIndex == 8 ? 9 : 8;
-
-                        string selectedName = individuos[selectedIndex].Image.name;
-                        bool isSelectedRed = selectedName.EndsWith("R");
-
-                        // Si el seleccionado está en rojo, quitar el rojo
-                        if (isSelectedRed)
-                        {
-                            string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
-                            Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
-                            individuos[selectedIndex].Image = selectedSprite;
-
-                            // Poner rojo al otro
-                            string otherName = individuos[otherIndex].Image.name;
-                            if (!otherName.EndsWith("R"))
-                            {
-                                string newOtherName = otherName + "R"; // Añadir "R"
-                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
-                                individuos[otherIndex].Image = otherSprite;
-                            }
-                        }
                         else
                         {
-                            // Si el seleccionado no está en rojo, poner rojo al otro
                             string otherName = individuos[otherIndex].Image.name;
                             if (!otherName.EndsWith("R"))
                             {
@@ -416,40 +333,38 @@ namespace Final_namespace
                                 individuos[otherIndex].Image = otherSprite;
                             }
                         }
-
-                        // Mostrar imagen seleccionada en el destino correspondiente
-                        individuos[12].Image = individuos[selectedIndex].Image;
                     }
-                }
-                else if (individuos[10] == selecIndividuo || individuos[11] == selecIndividuo)
-                {
-                    if (selecIndividuo.Image.name != "ImagenVacia")
+                    else
                     {
-                        int selectedIndex = individuos[10] == selecIndividuo ? 10 : 11;
-                        int otherIndex = selectedIndex == 10 ? 11 : 10;
+                        string otherName = individuos[otherIndex].Image.name;
+                        if (otherName.EndsWith("R"))
+                        {
+                            string newOtherName = otherName.Substring(0, otherName.Length - 1);
+                            Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                            individuos[otherIndex].Image = otherSprite;
+                        }
+                    }
 
-                        string selectedName = individuos[selectedIndex].Image.name;
-                        bool isSelectedRed = selectedName.EndsWith("R");
+                    individuos[10].Image = individuos[selectedIndex].Image;
+                }
 
-                        // Si el seleccionado está en rojo, quitar el rojo
+                // PAR 6 y 7 -> destino 11
+                if (individuos[6] == selecIndividuo || individuos[7] == selecIndividuo)
+                {
+                    int selectedIndex = individuos[6] == selecIndividuo ? 6 : 7;
+                    int otherIndex = selectedIndex == 6 ? 7 : 6;
+
+                    string selectedName = individuos[selectedIndex].Image.name;
+                    bool isSelectedRed = selectedName.EndsWith("R");
+
+                    if (selecIndividuo.Image.name != "ImagenVacia" && selecIndividuo.Image.name != "ImagenVaciaR")
+                    {
                         if (isSelectedRed)
                         {
                             string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
                             Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
                             individuos[selectedIndex].Image = selectedSprite;
 
-                            // Poner rojo al otro
-                            string otherName = individuos[otherIndex].Image.name;
-                            if (!otherName.EndsWith("R"))
-                            {
-                                string newOtherName = otherName + "R"; // Añadir "R"
-                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
-                                individuos[otherIndex].Image = otherSprite;
-                            }
-                        }
-                        else
-                        {
-                            // Si el seleccionado no está en rojo, poner rojo al otro
                             string otherName = individuos[otherIndex].Image.name;
                             if (!otherName.EndsWith("R"))
                             {
@@ -458,40 +373,8 @@ namespace Final_namespace
                                 individuos[otherIndex].Image = otherSprite;
                             }
                         }
-
-                        // Mostrar imagen seleccionada en el destino correspondiente
-                        individuos[13].Image = individuos[selectedIndex].Image;
-                    }
-                }
-                else if (individuos[12] == selecIndividuo || individuos[13] == selecIndividuo)
-                {
-                    if (selecIndividuo.Image.name != "ImagenVacia")
-                    {
-                        int selectedIndex = individuos[12] == selecIndividuo ? 12 : 13;
-                        int otherIndex = selectedIndex == 12 ? 13 : 12;
-
-                        string selectedName = individuos[selectedIndex].Image.name;
-                        bool isSelectedRed = selectedName.EndsWith("R");
-
-                        // Si el seleccionado está en rojo, quitar el rojo
-                        if (isSelectedRed)
-                        {
-                            string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
-                            Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
-                            individuos[selectedIndex].Image = selectedSprite;
-
-                            // Poner rojo al otro
-                            string otherName = individuos[otherIndex].Image.name;
-                            if (!otherName.EndsWith("R"))
-                            {
-                                string newOtherName = otherName + "R"; // Añadir "R"
-                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
-                                individuos[otherIndex].Image = otherSprite;
-                            }
-                        }
                         else
                         {
-                            // Si el seleccionado no está en rojo, poner rojo al otro
                             string otherName = individuos[otherIndex].Image.name;
                             if (!otherName.EndsWith("R"))
                             {
@@ -500,11 +383,171 @@ namespace Final_namespace
                                 individuos[otherIndex].Image = otherSprite;
                             }
                         }
-
-                        // Mostrar imagen seleccionada en el destino correspondiente
-                        individuos[14].Image = individuos[selectedIndex].Image;
                     }
+                    else
+                    {
+                        string otherName = individuos[otherIndex].Image.name;
+                        if (otherName.EndsWith("R"))
+                        {
+                            string newOtherName = otherName.Substring(0, otherName.Length - 1);
+                            Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                            individuos[otherIndex].Image = otherSprite;
+                        }
+                    }
+
+                    individuos[11].Image = individuos[selectedIndex].Image;
                 }
+
+                // PAR 8 y 9 -> destino 12
+                if (individuos[8] == selecIndividuo || individuos[9] == selecIndividuo)
+                {
+                    int selectedIndex = individuos[8] == selecIndividuo ? 8 : 9;
+                    int otherIndex = selectedIndex == 8 ? 9 : 8;
+
+                    string selectedName = individuos[selectedIndex].Image.name;
+                    bool isSelectedRed = selectedName.EndsWith("R");
+
+                    if (selecIndividuo.Image.name != "ImagenVacia" && selecIndividuo.Image.name != "ImagenVaciaR")
+                    {
+                        if (isSelectedRed)
+                        {
+                            string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
+                            Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
+                            individuos[selectedIndex].Image = selectedSprite;
+
+                            string otherName = individuos[otherIndex].Image.name;
+                            if (!otherName.EndsWith("R"))
+                            {
+                                string newOtherName = otherName + "R";
+                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                                individuos[otherIndex].Image = otherSprite;
+                            }
+                        }
+                        else
+                        {
+                            string otherName = individuos[otherIndex].Image.name;
+                            if (!otherName.EndsWith("R"))
+                            {
+                                string newOtherName = otherName + "R";
+                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                                individuos[otherIndex].Image = otherSprite;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string otherName = individuos[otherIndex].Image.name;
+                        if (otherName.EndsWith("R"))
+                        {
+                            string newOtherName = otherName.Substring(0, otherName.Length - 1);
+                            Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                            individuos[otherIndex].Image = otherSprite;
+                        }
+                    }
+
+                    individuos[12].Image = individuos[selectedIndex].Image;
+                }
+
+                // PAR 10 y 11 -> destino 13
+                if (individuos[10] == selecIndividuo || individuos[11] == selecIndividuo)
+                {
+                    int selectedIndex = individuos[10] == selecIndividuo ? 10 : 11;
+                    int otherIndex = selectedIndex == 10 ? 11 : 10;
+
+                    string selectedName = individuos[selectedIndex].Image.name;
+                    bool isSelectedRed = selectedName.EndsWith("R");
+
+                    if (selecIndividuo.Image.name != "ImagenVacia" && selecIndividuo.Image.name != "ImagenVaciaR")
+                    {
+                        if (isSelectedRed)
+                        {
+                            string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
+                            Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
+                            individuos[selectedIndex].Image = selectedSprite;
+
+                            string otherName = individuos[otherIndex].Image.name;
+                            if (!otherName.EndsWith("R"))
+                            {
+                                string newOtherName = otherName + "R";
+                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                                individuos[otherIndex].Image = otherSprite;
+                            }
+                        }
+                        else
+                        {
+                            string otherName = individuos[otherIndex].Image.name;
+                            if (!otherName.EndsWith("R"))
+                            {
+                                string newOtherName = otherName + "R";
+                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                                individuos[otherIndex].Image = otherSprite;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string otherName = individuos[otherIndex].Image.name;
+                        if (otherName.EndsWith("R"))
+                        {
+                            string newOtherName = otherName.Substring(0, otherName.Length - 1);
+                            Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                            individuos[otherIndex].Image = otherSprite;
+                        }
+                    }
+
+                    individuos[13].Image = individuos[selectedIndex].Image;
+                }
+
+                // PAR 12 y 13 -> destino 14
+                if (individuos[12] == selecIndividuo || individuos[13] == selecIndividuo)
+                {
+                    int selectedIndex = individuos[12] == selecIndividuo ? 12 : 13;
+                    int otherIndex = selectedIndex == 12 ? 13 : 12;
+
+                    string selectedName = individuos[selectedIndex].Image.name;
+                    bool isSelectedRed = selectedName.EndsWith("R");
+
+                    if (selecIndividuo.Image.name != "ImagenVacia" && selecIndividuo.Image.name != "ImagenVaciaR")
+                    {
+                        if (isSelectedRed)
+                        {
+                            string newSelectedName = selectedName.Substring(0, selectedName.Length - 1);
+                            Sprite selectedSprite = Resources.Load<Sprite>(newSelectedName);
+                            individuos[selectedIndex].Image = selectedSprite;
+
+                            string otherName = individuos[otherIndex].Image.name;
+                            if (!otherName.EndsWith("R"))
+                            {
+                                string newOtherName = otherName + "R";
+                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                                individuos[otherIndex].Image = otherSprite;
+                            }
+                        }
+                        else
+                        {
+                            string otherName = individuos[otherIndex].Image.name;
+                            if (!otherName.EndsWith("R"))
+                            {
+                                string newOtherName = otherName + "R";
+                                Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                                individuos[otherIndex].Image = otherSprite;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string otherName = individuos[otherIndex].Image.name;
+                        if (otherName.EndsWith("R"))
+                        {
+                            string newOtherName = otherName.Substring(0, otherName.Length - 1);
+                            Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                            individuos[otherIndex].Image = otherSprite;
+                        }
+                    }
+
+                    individuos[14].Image = individuos[selectedIndex].Image;
+                }
+
             }
 
             setHearts();
