@@ -76,11 +76,11 @@ namespace Final_namespace
         {
             VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
-            Debug.Log("root: " + root);
+            //Debug.Log("root: " + root);
 
             contenedor_menu = root.Q<VisualElement>("Menu");
            
-            Debug.Log("contenedor_menu: " + contenedor_menu);
+            //Debug.Log("contenedor_menu: " + contenedor_menu);
 
            
             
@@ -105,12 +105,12 @@ namespace Final_namespace
             l4 = chart.Q<VisualElement>("4");
 
             //llorando
-
+            /*
             Debug.Log("l1: " + l1);
             Debug.Log("l2: " + l2);
             Debug.Log("l3: " + l3);
             Debug.Log("l4: " + l4);
-
+            */
 
             card1 = l4.Q("C1");
             card2 = l4.Q("C2");
@@ -191,23 +191,23 @@ namespace Final_namespace
         void Pass(ClickEvent e)
         {
             VisualElement tarjeta = e.target as VisualElement;
-            Debug.Log(tarjeta);
+            //Debug.Log(tarjeta);
             selecIndividuo = tarjeta.userData as Individuo;
-            Debug.Log(selecIndividuo);
+           // Debug.Log(selecIndividuo);
 
-            Debug.Log("individuo: " + selecIndividuo);
+            //Debug.Log("individuo: " + selecIndividuo);
             if (selecIndividuo != null)
             {
                 if (individuos[0] == selecIndividuo || individuos[1] == selecIndividuo)
                 {
-                    if (selecIndividuo.Image.name != "ImagenVacia")
+                    int selectedIndex = individuos[0] == selecIndividuo ? 0 : 1;
+                    int otherIndex = selectedIndex == 0 ? 1 : 0;
+
+                    string selectedName = individuos[selectedIndex].Image.name;
+                    bool isSelectedRed = selectedName.EndsWith("R");
+
+                    if (selecIndividuo.Image.name != "ImagenVacia" && selecIndividuo.Image.name != "ImagenVaciaR")
                     {
-                        int selectedIndex = individuos[0] == selecIndividuo ? 0 : 1;
-                        int otherIndex = selectedIndex == 0 ? 1 : 0;
-
-                        string selectedName = individuos[selectedIndex].Image.name;
-                        bool isSelectedRed = selectedName.EndsWith("R");
-
                         // Si el seleccionado está en rojo, quitar el rojo
                         if (isSelectedRed)
                         {
@@ -235,10 +235,23 @@ namespace Final_namespace
                                 individuos[otherIndex].Image = otherSprite;
                             }
                         }
-
-                        // Mostrar imagen seleccionada en el destino correspondiente
-                        individuos[8].Image = individuos[selectedIndex].Image;
                     }
+                    else 
+                    {
+                        Debug.Log("es imagen vacia");
+                        string otherName = individuos[otherIndex].Image.name;
+                        if (otherName.EndsWith("R"))
+                        {
+                            Debug.Log("acaba en r");
+                            string newOtherName = otherName.Substring(0, otherName.Length - 1); // Eliminar "R"
+                            Sprite otherSprite = Resources.Load<Sprite>(newOtherName);
+                            individuos[otherIndex].Image = otherSprite;
+                        }
+                    }
+
+                    // Mostrar imagen seleccionada en el destino correspondiente
+                    individuos[8].Image = individuos[selectedIndex].Image;
+                    
                 }
                 else if (individuos[2] == selecIndividuo || individuos[3] == selecIndividuo)
                 {
@@ -498,12 +511,12 @@ namespace Final_namespace
         }
         void setHearts()
         {
-            Debug.Log(chart);
+            //Debug.Log(chart);
             VisualElement heartsV = chart.Q<VisualElement>("Hearts");
             hearts = heartsV.Q<Hearts>("HeartsCustom");
-            Debug.Log("hearts: " + hearts);
+           // Debug.Log("hearts: " + hearts);
 
-            Debug.Log(hearts);
+           // Debug.Log(hearts);
             hearts.Estado = 0;
 
             //recorrer las cartas
@@ -570,12 +583,12 @@ namespace Final_namespace
 
         void CambioImagen(Sprite imagen)
         {
-            Debug.Log("Entro imagen");
+           // Debug.Log("Entro imagen");
 
-            Debug.Log("individuo: "+selecIndividuo);
+           // Debug.Log("individuo: "+selecIndividuo);
             if (selecIndividuo != null && changeImage)
             {
-                Debug.Log(imagen);
+               // Debug.Log(imagen);
                 selecIndividuo.Image = imagen;
             }
 
@@ -585,9 +598,9 @@ namespace Final_namespace
         {
             changeImage = true;
             VisualElement tarjeta = e.target as VisualElement;
-            Debug.Log(tarjeta);
+           // Debug.Log(tarjeta);
             selecIndividuo = tarjeta.userData as Individuo;
-            Debug.Log(selecIndividuo);
+           // Debug.Log(selecIndividuo);
 
             
         }
@@ -623,7 +636,7 @@ namespace Final_namespace
             string rutaArchivo = Application.persistentDataPath + "/individuos.json"; //Guardamos la ruta del Json
             string listaToJson = JsonHelper.ToJSon(individuos, true); // Convierte la lista a JSON
             File.WriteAllText(rutaArchivo, listaToJson); // Guarda el JSON en un archivo
-            Debug.Log("Archivo JSON guardado en: " + rutaArchivo);
+            //Debug.Log("Archivo JSON guardado en: " + rutaArchivo);
         }
 
         private void CargarJson(ClickEvent evt)
@@ -640,18 +653,18 @@ namespace Final_namespace
                 List<Individuo> jsonToLista = JsonHelper.FromJson<Individuo>(jsonContent);
 
                 individuos = Basedatos.getDataJson(jsonToLista);
-                Debug.Log(individuos);
+                //Debug.Log(individuos);
 
                 InitializeUI();
                 setHearts();
-                Debug.Log("Archivo JSON cargado correctamente");
+                //Debug.Log("Archivo JSON cargado correctamente");
 
                 // Asignar las imágenes de cada Individuo a sus cartas
                 
             }
             else
             {
-                Debug.LogError("No se encontró el archivo JSON en la ruta: " + rutaArchivo);
+                //Debug.LogError("No se encontró el archivo JSON en la ruta: " + rutaArchivo);
             }
         }
 
@@ -681,7 +694,7 @@ namespace Final_namespace
             }
             else
             {
-                Debug.LogError("La lista de individuos cargada no tiene suficientes elementos.");
+                //Debug.LogError("La lista de individuos cargada no tiene suficientes elementos.");
             }
         }
 
